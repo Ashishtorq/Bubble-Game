@@ -8,9 +8,8 @@ let makeBubble = () => {
 
   document.querySelector(".panel-bottom").innerHTML = clutter;
 };
-makeBubble();
 
-let timervalue = 5;
+let timervalue = 60; // Initial value
 let timer = () => {
   let timerinterval = setInterval(() => {
     if (timervalue > 0) {
@@ -21,10 +20,24 @@ let timer = () => {
     }
   }, 1000);
 };
-timer();
 
 let gethit = () => {
   let rn = Math.floor(Math.random() * 10);
   document.querySelector("#gethit").textContent = rn;
 };
+
+let score = 0; // Initial value
+let getScore = () => {
+  score = score + 10;
+  document.querySelector("#scorevalue").textContent = score;
+};
+
+document.querySelector(".panel-bottom").addEventListener("click", function (details) {
+  // alert("its working")
+  console.log(Number(details.target.textContent))
+});
+
+makeBubble();
 gethit();
+getScore();
+timer();
