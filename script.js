@@ -49,7 +49,7 @@ let getScore = () => {
 document
   .querySelector(".panel-bottom")
   .addEventListener("click", function (details) {
-    // alert("its working")
+    // alert("its working").
     let clickedNum = Number(details.target.textContent);
     if (clickedNum === hitRn) {
       getScore();
