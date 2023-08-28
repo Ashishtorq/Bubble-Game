@@ -9,9 +9,6 @@ let makeBubble = () => {
   document.querySelector(".panel-bottom").innerHTML = clutter;
 };
 
-
-
-
 let timervalue = 60; // Initial value
 let timer = () => {
   let timerinterval = setInterval(() => {
@@ -24,27 +21,17 @@ let timer = () => {
   }, 1000);
 };
 
-
-
-
 let hitRn;
 let gethit = () => {
   hitRn = Math.floor(Math.random() * 10);
   document.querySelector("#gethit").textContent = hitRn;
 };
 
-
-
-
-
 let score = 0; // Initial value
 let getScore = () => {
   score = score + 10;
   document.querySelector("#scorevalue").textContent = score;
 };
-
-
-
 
 document
   .querySelector(".panel-bottom")
@@ -53,9 +40,10 @@ document
     let clickedNum = Number(details.target.textContent);
     if (clickedNum === hitRn) {
       getScore();
-      makeBubble();
       gethit();
+
     }
   });
 
 timer();
+makeBubble();
